@@ -1,7 +1,6 @@
 return {
   {
     'mfussenegger/nvim-jdtls',
-    depen
     ft = { 'java' },
     config = function()
       local jdtls = require 'jdtls'
@@ -217,7 +216,7 @@ return {
       require('jdtls').start_or_attach(config)
 
       -- Set Java Specific Keymaps
-      require('custom.keymaps').jdtls()
+      require('custom.lsp_keybinds').jdtls()
     end,
   },
 }

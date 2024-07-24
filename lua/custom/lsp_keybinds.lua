@@ -8,12 +8,12 @@ M.jdtls = function()
   vim.cmd "command! -buffer JdtBytecode lua require('jdtls').javap()"
   vim.cmd "command! -buffer JdtJshell lua require('jdtls').jshell()"
 
-  local status_ok, which_key = pcall(require, 'which-key')
-  if not status_ok then
-    return
-  end
+  -- local status_ok, which_key = pcall(require, 'which-key')
+  -- if not status_ok then
+  --   return
+  -- end
 
-  local bufnr = vim.api.get_current_buf()
+  local bufnr = vim.api.nvim_get_current_buf()
 
   vim.keymap.set('n', '<leader>Jo', "<Cmd>lua require'jdtls'.organize_imports()<CR>", { desc = 'Organize Imports', noremap = true, buffer = bufnr })
 
